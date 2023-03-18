@@ -11,7 +11,7 @@ public class Course implements Comparable<Course> {
         } else {
             this.courseNum = 0;
         }
-        if (courseDept != "" || courseDept != null) {
+        if (courseDept != "" && courseDept != null) {
             this.courseDept = courseDept;
         } else {
             this.courseDept = "";

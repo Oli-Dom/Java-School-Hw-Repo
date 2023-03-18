@@ -13,7 +13,7 @@ public class Person implements Comparable<Person> {
         } else {
             this.birthYear = 0;
         }
-        if (name != "" || name != null) {
+        if (name != "" && name != null) {
             this.name = name;
         } else {
             this.name = "";
@@ -29,7 +29,7 @@ public class Person implements Comparable<Person> {
     }
 
     public void setName(String name) {
-        if (name != "" || name != null) {
+        if (name != "" && name != null) {
             this.name = name;
         } else {
             this.name = "";
