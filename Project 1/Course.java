@@ -74,8 +74,9 @@ public class Course implements Comparable<Course> {
 
     @Override
     public String toString() {
-        return String.format("Course: %3s-%3d | Number of Credits: %02d  | Graduate/Undergraduate", courseDept,
-                courseNum, numCredits, isGraduateCourse);
+        String status = isGraduateCourse ? "Graduate" : "Undergraduate";
+        return String.format("Course: %3s-%3d | Number of Credits: %02d | %s", courseDept,
+                courseNum, numCredits, status);
     }
 
     @Override

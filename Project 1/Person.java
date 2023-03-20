@@ -54,8 +54,8 @@ public class Person implements Comparable<Person> {
         }
         if (o instanceof Person) {
             Person otherPerson = (Person) o;
-            if (this.name.equals(otherPerson.name)) {
-                if (this.birthYear == otherPerson.birthYear) {
+            if (this.getName().equals(otherPerson.getName())) {
+                if (this.getBirthYear() == otherPerson.getBirthYear()) {
                     return true;
                 }
             }

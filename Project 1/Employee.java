@@ -41,7 +41,7 @@ public class Employee extends Person {
         return numEmployees;
     }
 
-    public int getEmployeID() {
+    public int getEmployeeID() {
         return this.employeeID;
     }
 
@@ -56,10 +56,21 @@ public class Employee extends Person {
 
     @Override
     public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Employee)) {
+            return false;
+        }
+
         if (super.equals(o)) {
             Employee otherEmp = (Employee) o;
-            if (this.deptName.equals(otherEmp.deptName)) {
-                if (this.employeeID == otherEmp.employeeID) {
+            if (this.getDeptName().equals(otherEmp.getDeptName())) {
+                if (this.getEmployeeID() == otherEmp.getEmployeeID()) {
                     return true;
                 }
             }
@@ -70,18 +81,18 @@ public class Employee extends Person {
     @Override
     public String toString() {
         String s = super.toString();
-        String fs = s + String.format("Employee: Department: %20s | Employee Number: %3d", deptName, employeeID);
+        String fs = s + String.format(" Employee: Department: %20s | Employee Number: %3d", deptName, employeeID);
         return fs;
     }
 
     @Override
     public int compareTo(Person p) {
         Employee e = (Employee) p;
-        if (this.getEmployeID() < e.getEmployeID()) {
+        if (this.getEmployeeID() < e.getEmployeeID()) {
             return -1;
         }
 
-        else if (this.getEmployeID() > e.getEmployeID()) {
+        else if (this.getEmployeeID() > e.getEmployeeID()) {
             return 1;
 
         } else {
